@@ -6,8 +6,10 @@ import Guns from './components/Guns/Guns';
 function App() {
   const [guns, setGuns] = useState([])
   const handleAddToCart = (gun) => {
-    const newCart = [...guns, gun];
-    setGuns(newCart);
+    if (guns.length < 4) {
+      const newCart = [...guns, gun];
+      setGuns(newCart);
+    }
   };
   return (
     <div className="App">
